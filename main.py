@@ -21,7 +21,7 @@ async def getweather():
 
             # fetch a WEATHER forecast from a city
             global WEATHER
-            WEATHER = await client.get("@" + EXTERNALIP)
+            WEATHER = await client.get("Huntsville")
             
             # get the WEATHER forecast for a few days
             # for forecast in WEATHER.forecasts:
@@ -31,7 +31,7 @@ async def getweather():
             #   for hourly in forecast.hourly:
             #     print(f' --> {hourly}')
 
-            await asyncio.sleep(10)
+            await asyncio.sleep(5*60)
 
 
 class rgbGen():
@@ -144,11 +144,11 @@ class clockMatrix(MatrixBase):
             rgbColor = graphics.Color(rgbVal[0], rgbVal[1], rgbVal[2])
                 
             # draw time
-            graphics.DrawText(self.canvas, self.timeFont, 2, 11, self.timeColor, 
+            graphics.DrawText(self.canvas, self.timeFont, 3, 11, self.timeColor, 
                               self.timeText)
 
             #draw Date
-            graphics.DrawText(self.canvas, self.dateFont, 6, 17, self.dateColor, 
+            graphics.DrawText(self.canvas, self.dateFont, 5, 17, self.dateColor, 
                               self.dateText)
             graphics.DrawText(self.canvas, self.dateFont, 10, 23, 
                               self.dateColor, self.yearText)
